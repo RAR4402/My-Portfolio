@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects</title> 
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    :root {
+      --primary: #6e45e2;
+      --secondary: #88d3ce;
+      --dark: #1a1a2e;
+      --light: #f9f9f9;
+      --neon: #00f0ff;
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      margin: 0;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(110, 69, 226, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(136, 211, 206, 0.15) 0%, transparent 40%);
+      z-index: -1;
+    }
+
+    header {
+      background: rgba(26, 26, 46, 0.8);
+      color: var(--light);
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    nav a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5em 1em;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--neon);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--neon);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      padding: 2em;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 2em;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2em;
+    }
+
+    .project-card {
+      background: rgba(26, 26, 46, 0.6);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(110, 69, 226, 0.1);
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 40px rgba(110, 69, 226, 0.2);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 1.2em;
+    }
+
+    .project-title {
+      font-size: 1.6rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      color: transparent;
+      margin: 0.5em 0;
+    }
+
+    .project-description {
+      color: var(--light);
+      opacity: 0.85;
+      margin-bottom: 1em;
+    }
+
+    .project-links {
+      text-align: center;
+      margin-top: 1em;
+    }
+
+    .project-links a {
+      text-decoration: none;
+      padding: 0.5em 1.2em;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      background: var(--neon); /* Set to neon color */
+      color: var(--dark);
+    }
+
+    .project-links a:hover {
+      background: #00d4e0; /* Slightly adjusted hover color */
+      color: white;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--dark);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gradient);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Projects</h1>
+    <nav><a href="index.html">Home</a></nav>
+  </header>
+  <main>
+    <h2>Projects Showcase</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-content">
+          <div class="project-title">Weather App</div>
+          <div class="project-description">
+            A real-time weather app using OpenWeather API and vanilla JavaScript.
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/kaushalsahu07/weather" class="github-link" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-content">
+          <div class="project-title">Task Manager</div>
+          <div class="project-description">
+            A responsive task manager with local storage built using HTML, CSS, and JS.
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ironcodingofficial/to-do-list" class="github-link" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-content">
+          <div class="project-title">Portfolio Website</div>
+          <div class="project-description">
+            A clean and modern personal portfolio built using HTML, CSS, and animations.
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/pawantech12/portfolio-website" class="github-link" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-content">
+          <div class="project-title">Hospital Management Website</div>
+          <div class="project-description">
+            A basic real-time Hospital Management Website using MERN stack.
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Sushil787/Hospital-management-system-MERN-stack" class="github-link" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
